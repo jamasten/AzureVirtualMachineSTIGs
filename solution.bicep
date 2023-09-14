@@ -177,7 +177,7 @@ module virtualMachineExtensions 'modules/desiredStateConfiguration.bicep' = [for
     ConfigurationName: ConfigurationName
     Location: Location
     RegistrationKey: automationAccount.listKeys().keys[0].Value
-    RegistrationUrl: reference('automationAccount').registrationUrl
+    RegistrationUrl: reference(automationAccount.id, '2018-06-30').registrationUrl
     Tags: Tags
     Timestamp: Timestamp
     VirtualMachineName: VirtualMachine

@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.21.1.54444",
-      "templateHash": "4154110770897636051"
+      "templateHash": "15512394072128250157"
     }
   },
   "parameters": {
@@ -257,7 +257,7 @@
             "value": "[listKeys(resourceId('Microsoft.Automation/automationAccounts', parameters('AutomationAccountName')), '2021-06-22').keys[0].Value]"
           },
           "RegistrationUrl": {
-            "value": "[reference('automationAccount').registrationUrl]"
+            "value": "[reference(resourceId('Microsoft.Automation/automationAccounts', parameters('AutomationAccountName')), '2018-06-30').registrationUrl]"
           },
           "Tags": {
             "value": "[parameters('Tags')]"
