@@ -133,7 +133,6 @@ resource modules 'Microsoft.Automation/automationAccounts/modules@2019-06-01' = 
   properties: {
     contentLink: {
       uri: 'https://www.powershellgallery.com/api/v2/package/${Module.name}/${Module.version}'
-      version: Module.version
     }
   }
 }]
