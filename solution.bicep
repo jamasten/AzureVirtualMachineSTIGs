@@ -174,7 +174,7 @@ module virtualMachineExtensions 'modules/desiredStateConfiguration.bicep' = [for
   name: 'DSC_${VirtualMachine}_${Timestamp}'
   scope: resourceGroup(VirtualMachinesResourceGroupName)
   params: {
-    ConfigurationName: ConfigurationName
+    ConfigurationName: configuration.name
     Location: Location
     RegistrationKey: automationAccount.listKeys().keys[0].Value
     RegistrationUrl: reference(automationAccount.id, '2018-06-30').registrationUrl
@@ -182,4 +182,7 @@ module virtualMachineExtensions 'modules/desiredStateConfiguration.bicep' = [for
     Timestamp: Timestamp
     VirtualMachineName: VirtualMachine
   }
+  dependsOn: [
+    compilationJob
+  ]
 }]
