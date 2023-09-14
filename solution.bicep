@@ -1,11 +1,28 @@
-param ArtifactsLocation string
+@description('The URL location for the solution\'s artifacts')
+param ArtifactsLocation string = 'https://raw.githubusercontent.com/jamasten/AzureVirtualMachineSTIGs/main/artifacts/'
+
+@description('The name for the Automation Account.')
 param AutomationAccountName string
-param ConfigurationName string
+
+@description('The name of the DSC configuration.')
+param ConfigurationName string = 'Windows10'
+
+@description('The location for the resources deployed in this solution.')
 param Location string
+
+@description('The resource ID for the Log Analytics Workspace to monitor the compliance of the DSC configuration on the virtual machines.')
 param LogAnalyticsWorkspaceResourceId string = ''
+
+@description('The metadata for the Azure resources deployed in this solution.')
 param Tags object
-param Timestamp string
+
+@description('DO NOT MODIFY THIS VALUE! The timestamp is needed to differentiate deployments for certain Azure resources and must be set using a parameter.')
+param Timestamp string = utcNow('yyyyMMddhhmmss')
+
+@description('The names of the virtual machines that will recieve the DSC configuration.')
 param VirtualMachineNames array
+
+@description('The name of the resource group that contains all the virtual machines.')
 param VirtualMachinesResourceGroupName string
 
 var Modules = [
