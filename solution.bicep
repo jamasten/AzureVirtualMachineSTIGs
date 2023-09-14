@@ -14,7 +14,7 @@ param Location string
 param LogAnalyticsWorkspaceResourceId string = ''
 
 @description('The metadata for the Azure resources deployed in this solution.')
-param Tags object
+param Tags object = {}
 
 @description('DO NOT MODIFY THIS VALUE! The timestamp is needed to differentiate deployments for certain Azure resources and must be set using a parameter.')
 param Timestamp string = utcNow('yyyyMMddhhmmss')

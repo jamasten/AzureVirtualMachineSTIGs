@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.21.1.54444",
-      "templateHash": "4882425250404420372"
+      "templateHash": "4154110770897636051"
     }
   },
   "parameters": {
@@ -44,6 +44,7 @@
     },
     "Tags": {
       "type": "object",
+      "defaultValue": {},
       "metadata": {
         "description": "The metadata for the Azure resources deployed in this solution."
       }
